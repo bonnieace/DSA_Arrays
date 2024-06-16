@@ -24,11 +24,16 @@ class myArray{
     }
     shift(){
         const first=this.data[0]
-        delete this.data[0]
+        for (let i=1; i< this.length;i++){
+            this.data[i-1]=this.data[i]
+
+        }
+        delete this.data[this.length-1]
+
 
 
         this.length--
-        return this.data
+        return first
     }
 }
 
